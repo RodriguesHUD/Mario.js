@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width:100%;
+    height: 750px;
+    border-bottom: 20px solid rgb(4, 156, 17);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e8f6ff);
+    
+}
+
+
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 2s infinite linear;
+}
+
+.pipe2 {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    animation: pipe2-animation 3s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    
+
+}
+
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+
+.nuvem {
+    position: absolute;
+    width: 1000px;
+    animation: clouds-animation 30s infinite linear ;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes pipe2-animation {
+    from {
+        right: -533px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -1000px;
+    }
+    
+    to {
+        right: 100%;
+    }
+}
+
+
+#playAudio {
+    position: absolute;
+    background-color: green;
+    border: none;
+    color: whitesmoke;
+    padding: 7px 10px;
+    margin-left: 20px;
+    margin-top: 15px;
+    box-shadow: 3px 3px 1px rgba(0, 0, 255, 0.356);
+    cursor: pointer;
+    z-index: 20;
+}
+
+#playAudio:active {
+    background-color: rgba(0, 0, 255, 0.356);
+}
+
+
+
+
+
+#fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+#modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    max-height: 600px;
+    background-color: rgb(247, 160, 0);
+    align-items: center;
+    z-index: 10;
+    box-shadow:10px 10px 5px rgb(56, 26, 1) ;
+    border: 2px solid black;
+    
+}
+
+#modal-container {
+    display:flex;
+    justify-content: center;
+}
+
+#modal h2 {
+    padding: 5px;
+    color:#362100;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: bolder;
+   
+    
+}
+
+#modal img {
+    max-width: 500px;
+    
+}
+
+#reset {
+    display: flex;
+    color: #241104;
+    background-color: #885101;
+    padding: 10px;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#reset svg {
+    color: rgb(251, 255, 0);
+    width: 20px;
+  
+    
+}
+
+
+#modal.hide, #fade.hide {
+    opacity: 1;
+}
